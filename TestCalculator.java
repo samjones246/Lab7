@@ -1,5 +1,13 @@
+/**
+ * Test handle for the Calculator class.
+ */
 public class TestCalculator{
 	Calculator myCalc = new Calculator();
+
+    /**
+     * Tests the parser method of the Calculator by checking that various conditions return the correct result.
+     * @return True if the test was successful, false if not.
+     */
 	public boolean testParser() {
 		boolean additionTest = myCalc.x("12 + 5")==17;
 		if (additionTest) {
@@ -21,6 +29,12 @@ public class TestCalculator{
 		}
 		return additionTest && multiplicationTest && operatorTest;
 	}
+
+    /**
+     * Tests the addition method of the Calculator by checking that it returns the correct result for both positive
+     * and negative operands.
+     * @return True if the test was successful, false if not.
+     */
 	public boolean testAdd() {
 		myCalc.x = new Double(30);
 		boolean positiveTest = myCalc.x(new Double(3)) == 33;
@@ -38,6 +52,11 @@ public class TestCalculator{
 		}
 		return positiveTest && negativeTest;
 	}
+    /**
+     * Tests the multiplication method of the Calculator by checking that it returns the correct result for both positive
+     * and negative operands.
+     * @return True if the test was successful, false if not.
+     */
 	public boolean testMultiplication() {
 		myCalc.x = new Double(11);
 		boolean positiveTest = myCalc.x((double)3) == 33;
